@@ -9,7 +9,7 @@ before_install:
 script:
     - docker run -e CI=true geovanedocker/react-test npm test
     
-after_sucess:
+after_success:
     - docker build -t geovanedocker/multi-client ./client
     - docker build -t geovanedocker/multi-nginx ./nginx
     - docker build -t geovanedocker/multi-server ./server
